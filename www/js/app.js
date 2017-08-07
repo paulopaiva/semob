@@ -164,11 +164,20 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       }
     }
   })
-  .state('tab.coleta', {
-    url: '/coleta',
+  .state('tab.patio', {
+    url: '/patio',
     views: {
-      'tab-coleta': {
-        templateUrl: 'templates/tab-coleta.html',
+      'tab-patio': {
+        templateUrl: 'templates/tab-patio.html',
+        controller: 'StatusCtrl'
+      }
+    }
+  })
+  .state('tab.multa', {
+    url: '/multa',
+    views: {
+      'tab-multa': {
+        templateUrl: 'templates/tab-multa.html',
         controller: 'StatusCtrl'
       }
     }

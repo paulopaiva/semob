@@ -23,8 +23,8 @@
      <ion-nav-view name="tab-ponto"></ion-nav-view>
    </ion-tab>
 -->
-    <ion-tab ng-if="tipo != 'Residencial'" title="Coleta" icon-off="ion-calendar" icon-on="ion-calendar"  href="#/tab/coleta" on-select="pegaColeta()" >
-      <ion-nav-view name="tab-coleta"></ion-nav-view>
+    <ion-tab ng-if="tipo != 'Residencial'" title="Coleta" icon-off="ion-android-bus" icon-on="ion-android-bus"  href="#/tab/patio" on-select="pegaColeta()" >
+      <ion-nav-view name="tab-patio"></ion-nav-view>
     </ion-tab>
 
 
@@ -38,8 +38,8 @@
 
 
 
-<ion-tab title="Colaboradores" icon-off="ion-flag" icon-on="ion-flag" href="#/tab/colaboradores" on-select="pegaStatusColaborador()">
-  <ion-nav-view name="tab-colaboradores"></ion-nav-view>
+<ion-tab title="Multas" icon-off="ion-document-text" icon-on="ion-document-text" href="#/tab/multa" on-select="pegaStatusColaborador()">
+  <ion-nav-view name="tab-multa"></ion-nav-view>
 </ion-tab>
 <!--
   <ion-tab title="Agendamento" icon-off="ion-ios-paper" icon-on="ion-ios-paper" href="#/tab/agendamento" on-select="pegaAgendamento()">

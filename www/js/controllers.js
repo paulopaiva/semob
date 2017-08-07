@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
-.controller('StatusCtrl', function($scope, $cordovaCapture, $cordovaStatusbar, $state, $cordovaNetwork,  $cordovaGeolocation, $cordovaToast, $http, Conexao, $cordovaContacts, $cordovaSocialSharing, $ionicModal, $cordovaCamera, $ionicLoading, $cordovaFileTransfer, $cordovaGeolocation, $timeout, $ionicPopup)  {
+.controller('StatusCtrl', function($scope,$cordovaCapture, $cordovaStatusbar, $state, $cordovaNetwork,  $cordovaGeolocation, $cordovaToast, $http, Conexao, $cordovaContacts, $cordovaSocialSharing, $ionicModal, $cordovaCamera, $ionicLoading, $cordovaFileTransfer, $cordovaGeolocation, $timeout, $ionicPopup)  {
 
 if (start==0) {
+
     $scope.lista = [];
     $scope.listaComentario = [];
     $scope.listaCurtir = [];
@@ -150,6 +151,32 @@ $scope.verificaNet = function(){
 }
 
 //  colaborador
+
+$scope.pegaPlaca = function(placa){
+
+
+
+  var valores = {
+    parametros:'pegaPlaca',
+    placa:'OFP-5694'
+
+  }
+
+  $http({
+        method:'GET',
+        url: path+'api/veiculo.php',
+        data: valores,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).success(function(data){
+
+         console.log(data) ;
+
+
+    });
+}
+
+
+
 $scope.pegaStatusServicos = function(){
 
 var valores = {
@@ -1653,7 +1680,7 @@ $scope.enviarColeta = function(msg){
            $ionicLoading.hide();
 
     //      $scope.showAlert('Informação','Sua mensagem foi enviada com sucesso!')
-           $scope.closemenu_coleta();
+           $scope.closemenu_patio();
             $scope.showAlert('Informação','Sua solicitação foi recebida com sucesso, Obrigado.');
     //       $scope.limparDados();
 
@@ -2206,23 +2233,42 @@ $scope.limparDados = function(){
     $scope.menu.show();
   };
 
-  $ionicModal.fromTemplateUrl('templates/menu-coleta.html', {
+  $ionicModal.fromTemplateUrl('templates/menu-patio.html', {
     scope: $scope
-  }).then(function(coleta) {
-    $scope.menucoleta = coleta;
+  }).then(function(patio) {
+    $scope.menupatio = patio;
   });
 
   // Triggered in the login modal to close it
-  $scope.closemenu_coleta = function() {
+  $scope.closemenu_patio = function() {
   //  $scope.msgTexto=false;
   //  $scope.btnMsg=true;
 
-    $scope.menucoleta.hide();
+    $scope.menupatio.hide();
   };
   // Open the login modal
-  $scope.menu_coleta = function() {
+  $scope.menu_patio = function() {
     $scope.pegaLocal();
-    $scope.menucoleta.show();
+    $scope.menupatio.show();
+  };
+
+  $ionicModal.fromTemplateUrl('templates/menu-multa.html', {
+    scope: $scope
+  }).then(function(multa) {
+    $scope.menumulta = multa;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closemenu_multa = function() {
+  //  $scope.msgTexto=false;
+  //  $scope.btnMsg=true;
+
+    $scope.menumulta.hide();
+  };
+  // Open the login modal
+  $scope.menu_multa = function() {
+    $scope.pegaLocal();
+    $scope.menumulta.show();
   };
 
 
