@@ -48,39 +48,44 @@
          </label>
        -->
 
-       <div class="item item-input-inset">
-        <!--  <span class="input-label">Placa do Veículo</span> -->
-        <div class="card">
-          <div class="item item-divider">
-            Dados do Veículo
-          </div>
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="Apenas letras..." ng-model="msg.letra" ng-maxlength="3" name="letra" ng-required="true">
-            -
-            <input type="number" placeholder="Apenas números..." ng-model="msg.numero" ng-maxlength="4" name="numero" ng-required="true">
+       <div class="card">
+         <div class="item item-divider">
+           Dados do Veículo
+         </div>
+         <div class="item item-input-inset">
+             <label class="item-input-wrapper">
+             <input type="text" placeholder="Apenas letras..." ng-model="msg.letra" ng-maxlength="3" name="letra" ng-required="true">
+             -
+             <input type="number" placeholder="Apenas números..." ng-model="msg.numero" ng-maxlength="4" name="numero" ng-required="true">
 
-            </div>
-            <div class="button-bar">
-               <a class="button button-block {{btn_tema}} ion-upload" ng-click="pegaPlaca('OFP-5694','')"> Buscar Placa</a>
-           </div>
+         </div>
+         <div class="button-bar">
+            <a class="button button-block {{btn_tema}} ion-upload" ng-click="pegaPlaca('OFP-5694','')"> Buscar Placa</a>
+        </div>
+        <div class="item item-divider">
+          Categoria do Veículo
+        </div>
+        <label class="item item-input item-select" >
+          <div class="input-label"><i class="icon ion-help-circled"></i></div>
+          <select ng-model="msgfoto.categoria" name="categoria"ng-required="true">
+           <option value="">Categoria</option>
+           <option>Passeio até 1000 kg</option>
+           <option>Passeio acima de 1000 kg</option>
+           <option>Ônibus</option>
+          </select>
+        </label>
+         <div class="item item-divider">
+           Local da Remoção
+         </div>
 
-          </div>
-       <label class="item item-input item-select" >
-         <div class="input-label"><i class="icon ion-help-circled"></i></div>
-         <select ng-model="msgfoto.categoria" name="categoria"ng-required="true">
-          <option value="">Categoria</option>
-          <option>Passeio até 1000 kg</option>
-          <option>Passeio acima de 1001 kg</option>
-          <option>Onibus</option>
-         </select>
-       </label>
+         <label class="item item-input">
+            <i class="icon ion-location placeholder-icon" ></i>
+            <input type="text" ng-click="pegaLocal()" name="localizacao" placeholder="Ligue o GPS e Ckick aqui!" ng-model="localizacao" ng-required="true">
+         </label>
+
          <label class="item item-input item-stacked-label">
             <span class="input-label">Observação</span>
            <input type="text" placeholder="Digite aqui uma observação..." ng-maxlength="1000" ng-model="msg.obs" >
-        </label>
-        <label class="item item-input">
-           <i class="icon ion-location placeholder-icon" ></i>
-           <input type="text" ng-click="pegaLocal()" name="localizacao" readonly placeholder="Ligue o GPS e Ckick aqui!" ng-model="localizacao" ng-required="true">
         </label>
 
        </div>
