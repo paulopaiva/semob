@@ -49,16 +49,22 @@
        -->
 
        <div class="item item-input-inset">
-          <span class="input-label">Placa do Veículo</span>
-         <label class="item-input-wrapper">
-           <input type="text" placeholder="Apenas letras..." ng-model="msg.letra" ng-maxlength="3" name="letra" ng-required="true">
-           -
-           <input type="number" placeholder="Apenas números..." ng-model="msg.numero" ng-maxlength="4" name="numero" ng-required="true">
+        <!--  <span class="input-label">Placa do Veículo</span> -->
+        <div class="card">
+          <div class="item item-divider">
+            Dados do Veículo
+          </div>
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Apenas letras..." ng-model="msg.letra" ng-maxlength="3" name="letra" ng-required="true">
+            -
+            <input type="number" placeholder="Apenas números..." ng-model="msg.numero" ng-maxlength="4" name="numero" ng-required="true">
 
-       </div>
-       <div class="button-bar">
-          <a class="button button-block {{btn_tema}} ion-upload" ng-click="pegaPlaca('OFP-5694','')"> Buscar Placa</a>
-      </div>
+            </div>
+            <div class="button-bar">
+               <a class="button button-block {{btn_tema}} ion-upload" ng-click="pegaPlaca('OFP-5694','')"> Buscar Placa</a>
+           </div>
+
+          </div>
        <label class="item item-input item-select" >
          <div class="input-label"><i class="icon ion-help-circled"></i></div>
          <select ng-model="msgfoto.categoria" name="categoria"ng-required="true">

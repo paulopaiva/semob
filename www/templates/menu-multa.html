@@ -38,11 +38,10 @@
 
        <div class="card">
          <div class="item item-divider">
-           Dados do Veiuculo
+           Dados do Veículo
          </div>
          <div class="item item-input-inset">
-            <span class="input-label">Placa do Veículo</span>
-           <label class="item-input-wrapper">
+             <label class="item-input-wrapper">
              <input type="text" placeholder="Apenas letras..." ng-model="msg.letra" ng-maxlength="3" name="letra" ng-required="true">
              -
              <input type="number" placeholder="Apenas números..." ng-model="msg.numero" ng-maxlength="4" name="numero" ng-required="true">
@@ -62,9 +61,11 @@
            </select>
          </label>
        -->
-         <div class="item item-text-wrap">
+
+         <div class="item item-divider">
            Local da Infração
          </div>
+
          <label class="item item-input">
             <i class="icon ion-location placeholder-icon" ></i>
             <input type="text" ng-click="pegaLocal()" name="localizacao" readonly placeholder="Ligue o GPS e Ckick aqui!" ng-model="localizacao" ng-required="true">
